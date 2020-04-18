@@ -1,9 +1,9 @@
 
-import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.beans.factory.annotation.Autowired;
 
 public class Store {
 
-    @Autowired
+    // @Autowired
     private Item item;
   
     public Store(Item item) {
