@@ -14,7 +14,11 @@ public class App {
         
         Store s = context.getBean("storeThroughConstructorInjection", Store.class);
 
-        System.out.println("依赖注入:");
+        System.out.println("构造方法依赖注入:");
         System.out.println(s);
+
+        Store s2 = context.getBean("storeThroughSetterInjection", Store.class);
+        System.out.println("set方法依赖注入: ");
+        System.out.println(s2);
     }
 }

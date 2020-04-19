@@ -15,10 +15,10 @@ public class AppConfig {
         return new Store(item1());
     }
     
-    // @Bean
-    // public Store storeThroughSetterInjection() {
-    //     Store store = new Store();
-    //     store.setItem(item1());
-    //     return store;
-    // }
+    @Bean
+    public Store storeThroughSetterInjection() {
+        Store store = new Store();
+        store.setItem(item1());
+        return store;
+    }
 }

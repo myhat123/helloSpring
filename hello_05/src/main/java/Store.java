@@ -6,11 +6,18 @@ public class Store {
     // @Autowired
     private Item item;
   
+    public Store() {}
+
     public Store(Item item) {
         this.item = item;    
     }
 
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    @Override
     public String toString() {
-        return "在构造函数 Store() 中使用 Dependency Injection 初始化 item, " + this.item.toString();
+        return "Dependency Injection 初始化 item, " + this.item.toString();
     }
 }
