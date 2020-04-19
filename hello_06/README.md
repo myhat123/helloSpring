@@ -60,3 +60,7 @@ It's really easy to keep adding multiple dependencies using this approach. If yo
 这个方法，简单清晰，但是不推荐使用，因为它存在缺点：
 1. 这个方法会使用反射注入依赖，运行消耗要多一些
 2. 构造方法有多个参数，可能就存在冲突
+
+By default, the container creates and configures all singleton beans during initialization. To avoid this, you can use the lazy-init attribute with value true on the bean configuration:
+
+<bean id="item1" class="org.baeldung.store.ItemImpl1" lazy-init="true" />

@@ -10,6 +10,6 @@ public class Store {
 
     @Override
     public String toString() {
-        return "Dependency Injection 初始化 item, " + this.item.toString();
+        return "Dependency Injection Store初始化" + this.hashCode() + ", item:" + this.item.toString();
     }
 }
