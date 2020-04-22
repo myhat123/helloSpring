@@ -1,5 +1,6 @@
 package com.mine.hello;
 
+import java.util.List;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,5 +18,9 @@ public class QryDtlDao {
 
     public int getCountOfQry() {
         return jdbcTemplate.queryForObject("SELECT COUNT(*) FROM brch_qry_dtl", Integer.class);
+    }
+
+    public List<QryDtl> getAllQryDtls() {
+        return jdbcTemplate.query("SELECT acc, rpt_sum, tran_date, amt, dr_cr_flag FROM brch_qry_dtl", new QryDtlRowMapper());
     }
 }
