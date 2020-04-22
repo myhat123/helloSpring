@@ -7,24 +7,28 @@ https://www.baeldung.com/inversion-control-and-dependency-injection-in-spring
 
 使用 spring annotation + xml 方式描述依赖注入关系
 
+```bash
 mkdir -p ./build/classes/java/main
 
 javac -d ./build/classes/java/main -cp ./libs/spring-context-5.2.5.RELEASE.jar:./libs/spring-core-5.2.5.RELEASE.jar:libs/spring-beans-5.2.5.RELEASE.jar:. ./src/main/java/*.java
 
 cp ./src/main/resources/applicationContext.xml ./build/classes/java/main
+```
 
 运行时连续碰到ClassNotFound错误，需要逐步增加一堆的spring jar包
 
+```bash
 java -classpath ./libs/spring-context-5.2.5.RELEASE.jar:./libs/spring-core-5.2.5.RELEASE.jar:./libs/spring-beans-5.2.5.RELEASE.jar:./libs/spring-aop-5.2.5.RELEASE.jar:./libs/commons-logging-1.2.jar:./libs/spring-expression-5.2.5.RELEASE.jar:./build/classes/java/main:. App
+```
 
 下载jar包
 ========
 
-spring-context-5.2.5.RELEASE.jar
-spring-core-5.2.5.RELEASE.jar
-spring-beans-5.2.5.RELEASE.jar
-spring-aop-5.2.5.RELEASE.jar
-spring-expression-5.2.5.RELEASE.jar
+spring-context-5.2.5.RELEASE.jar  
+spring-core-5.2.5.RELEASE.jar  
+spring-beans-5.2.5.RELEASE.jar  
+spring-aop-5.2.5.RELEASE.jar  
+spring-expression-5.2.5.RELEASE.jar  
 
 commons-logging-1.2.jar
 
@@ -44,7 +48,7 @@ public class Store {
 }
 ```
 
-这里Autowired，Store没有构造方法、set方法
+这里Autowired，Store没有构造方法、set方法  
 
 In case of Field-Based DI, we can inject the dependencies by marking them with an @Autowired 
 
@@ -63,4 +67,6 @@ It's really easy to keep adding multiple dependencies using this approach. If yo
 
 By default, the container creates and configures all singleton beans during initialization. To avoid this, you can use the lazy-init attribute with value true on the bean configuration:
 
+```xml
 <bean id="item1" class="org.baeldung.store.ItemImpl1" lazy-init="true" />
+```
