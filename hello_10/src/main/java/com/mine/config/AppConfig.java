@@ -11,7 +11,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;
 
 @Configuration
-@ComponentScan("com.mine.service")
+// @ComponentScan("com.mine.service")
 public class AppConfig {
     // @Bean
     // public DataSource dataSource() {
